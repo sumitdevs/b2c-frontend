@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+:root {
+  --theme-primary: #d84e55;         /* Brand Primary (Hopzy Crimson Red) */
+  --theme-primary-hover: #b9373e;   /* Button hover & active interaction */
+  --theme-primary-light: #fff1f2;   /* Soft tinted pill, badge & card backgrounds */
+  --theme-primary-border: #fecdd3;  /* Active borders & subtle dividers */
+  --theme-primary-ring: rgba(216, 78, 85, 0.25); /* Focus outline & halo rings */
+}
+
+body {
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Theme utility mappings */
+.text-theme {
+  color: var(--theme-primary);
+}
+
+.bg-theme {
+  background-color: var(--theme-primary);
+}
+
+.hover\:bg-theme-hover:hover {
+  background-color: var(--theme-primary-hover);
+}
+
+.border-theme {
+  border-color: var(--theme-primary);
+}
+
+.bg-theme-light {
+  background-color: var(--theme-primary-light);
+}
+
+.border-theme-border {
+  border-color: var(--theme-primary-border);
+}
+
+.ring-theme {
+  --tw-ring-color: var(--theme-primary-ring);
+}
