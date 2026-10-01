@@ -1,18 +1,134 @@
 @import "tailwindcss";
 
 :root {
-  --theme-primary: #d84e55;         /* Brand Primary (Hopzy Crimson Red) */
-  --theme-primary-hover: #b9373e;   /* Button hover & active interaction */
-  --theme-primary-light: #fff1f2;   /* Soft tinted pill, badge & card backgrounds */
-  --theme-primary-border: #fecdd3;  /* Active borders & subtle dividers */
-  --theme-primary-ring: rgba(216, 78, 85, 0.25); /* Focus outline & halo rings */
+  /* Typography: 1.2 (minor third) modular scale, based on 16px. */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  --font-size-xs: 0.694rem;
+  --font-size-sm: 0.833rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.2rem;
+  --font-size-xl: 1.44rem;
+  --font-size-2xl: 1.728rem;
+  --font-size-3xl: 2.074rem;
+  --font-size-4xl: 2.488rem;
+  --line-height: 1.6;
+  --line-height-tight: 1.2;
+
+  /* Semantic colour tokens. Keep components tied to intent, not raw colours. */
+  --color-background: #f8fafc;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f1f5f9;
+  --color-text: #172033;
+  --color-text-muted: #526075;
+  --color-border: #d9e1ec;
+  --theme-primary: #d84e55;
+  --theme-primary-hover: #b9373e;
+  --theme-primary-light: #fff1f2;
+  --theme-primary-border: #fecdd3;
+  --theme-primary-ring: rgb(216 78 85 / 25%);
+  --color-success: #16794a;
+  --color-warning: #a75b00;
+  --color-danger: #c4303a;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: #f8fafc;
-  color: #0f172a;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  line-height: var(--line-height);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  color: var(--color-text);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: var(--line-height-tight);
+}
+
+h1 { font-size: clamp(var(--font-size-3xl), 4vw, var(--font-size-4xl)); }
+h2 { font-size: var(--font-size-3xl); }
+h3 { font-size: var(--font-size-2xl); }
+h4 { font-size: var(--font-size-xl); }
+h5 { font-size: var(--font-size-lg); }
+h6 { font-size: var(--font-size-base); }
+
+p { margin: 0; }
+
+a {
+  color: inherit;
+  text-underline-offset: 0.16em;
+}
+
+:focus-visible {
+  outline: 3px solid var(--theme-primary-ring);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--theme-primary-border);
+  color: var(--color-text);
+}
+
+/* Add .animate-enter to first-load content; use .animate-enter-delay for a stagger. */
+.animate-enter {
+  animation: enter 560ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-enter-delay {
+  animation-delay: 120ms;
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  .animate-enter,
+  .animate-enter-delay {
+    animation: none;
+  }
 }
 
 /* Theme utility mappings */

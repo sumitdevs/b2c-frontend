@@ -83,18 +83,18 @@ export const LandingPage: React.FC = () => {
       {/* HERO SECTION WITH TRAVEL ILLUSTRATION BACKGROUND */}
       <section className="relative overflow-visible">
         {/* Panoramic Illustrated Banner matching reference */}
-        <div className="relative w-full min-h-[360px] sm:min-h-[420px] lg:min-h-[460px] overflow-hidden flex items-start sm:items-center bg-slate-900">
+        <div className="relative w-full min-h-90 sm:min-h-90 overflow-hidden flex items-start sm:items-center bg-slate-900">
           {/* Illustration Background Image matching reference image */}
           <img
             src="/images/hero-travel-banner.jpg"
             alt="Scenic travel highway illustration with luxury bus"
-            className="absolute inset-0 w-full h-full object-cover object-right sm:object-center select-none pointer-events-none"
+            className="absolute inset-0 w-full -translate-x-36 -translate-y-32 scale-180 sm:scale-100 sm:translate-0 h-full object-cover object-bottom-left sm:object-bottom select-none pointer-events-none"
             referrerPolicy="no-referrer"
           />
 
           {/* Gradient Overlay for high-contrast legible text */}
-          <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/85 via-neutral-900/60 to-black/25 sm:to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20" />
+          <div className="absolute inset-0 bg-linear-to-r from-neutral-950/85 via-neutral-900/60 to-black/25 sm:to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-black/20" />
 
           {/* Banner Content (Text, Badge, Headline) */}
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-8 sm:pt-12 pb-24 sm:pb-28">
@@ -109,7 +109,7 @@ export const LandingPage: React.FC = () => {
 
               {/* Heading */}
               <div className="space-y-2">
-                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black font-display tracking-tight text-white leading-[1.12] drop-shadow-md">
+                <h1 className="text-3xl lg:text-4xl text-white!">
                   Book Online Bus Tickets With <span className="text-theme">Confidence</span>
                 </h1>
               </div>
@@ -118,7 +118,7 @@ export const LandingPage: React.FC = () => {
         </div>
 
         {/* OVERLAPPING SEARCH WIDGET CONTAINER */}
-        <div className="relative -mt-16 sm:-mt-20 z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative -mt-32 sm:-mt-20 z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SearchWidget variant="hero" />
 
           {/* Trust points */}
